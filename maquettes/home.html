@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="./index.css">
+    <title>Notes</title>
+</head>
+<body>
+    <header>
+        <h1>Notes</h1>
+        <nav>
+            <ul>
+                <li><a href="#" data-section="home">Accueil</a></li>
+                <li><a href="#" data-section="add-note">Ajouter une note</a></li>
+                <li><a href="#" data-section="settings">Paramètres</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Section Accueil -->
+        <section id="home-section" class="active-section">
+            <h2>Vos Notes</h2>
+            <ul id="notes-list">
+                <!-- Notes will be dynamically loaded here -->
+            </ul>
+        </section>
+
+        <!-- Section Ajouter une note -->
+        <section id="add-note-section" class="hidden-section">
+            <h2>Ajouter une note</h2>
+            <form id="add-note-form">
+                <label for="note-title">Titre:</label>
+                <input type="text" id="note-title" required>
+                <label for="note-content">Contenu:</label>
+                <textarea id="note-content" required></textarea>
+                <button type="submit">Ajouter</button>
+            </form>
+        </section>
+
+        <!-- Section Modifier une note -->
+        <section id="edit-note-section" class="hidden-section">
+            <h2>Modifier une note</h2>
+            <form id="edit-note-form">
+                <label for="edit-note-title">Titre:</label>
+                <input type="text" id="edit-note-title" required>
+                <label for="edit-note-content">Contenu:</label>
+                <textarea id="edit-note-content" required></textarea>
+                <button type="submit">Enregistrer</button>
+            </form>
+        </section>
+
+        <!-- Section Paramètres -->
+        <section id="settings-section" class="hidden-section">
+            <h2>Paramètres</h2>
+            <button id="clear-notes" class="danger">Effacer toutes les notes</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 - Notes</p>
+    </footer>
+</body>
+</html>

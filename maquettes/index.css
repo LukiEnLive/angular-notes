@@ -1,0 +1,190 @@
+:root {
+    --bg: #f0f4f8; /* Light gray background */
+    --txt: #2c3e50; /* Dark gray text */
+    --accent: #3498db; /* Soft blue accent */
+    --accent-focus: #5dade2; /* Lighter blue for hover */
+    --danger: #e74c3c; /* Red for danger */
+    --danger-focus: #f1948a; /* Lighter red for hover */
+    --shadow: rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg);
+    color: var(--txt);
+}
+
+header {
+    background-color: var(--accent);
+    padding: 1rem;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+header h1 {
+    margin: 0;
+    color: var(--bg); /* Light text for contrast */
+    font-size: 1.5rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    padding: 1rem 0; /* Adjust padding for better spacing */
+    background-color: var(--accent); /* Change to match the background theme */
+    box-shadow: 0 4px 8px var(--shadow); /* Enhance shadow for depth */
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    background-color: var(--bg); /* Light background for links */
+    color: var(--accent); /* Blue text for links */
+    padding: 0.7rem 1.5rem; /* Increase padding for better click area */
+    border-radius: 10px; /* Add rounded corners */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Add smooth transform effect */
+    position: relative; /* For pseudo-elements */
+    overflow: hidden; /* Ensure effects stay within bounds */
+}
+
+nav a::before, nav a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 2px solid var(--accent); /* Border effect */
+    border-radius: 10px;
+    transform: scale(0); /* Start hidden */
+    transition: transform 0.5s ease-in-out;
+}
+
+nav a::before {
+    border-color: var(--accent-focus); /* Lighter border for contrast */
+    transform-origin: top left;
+}
+
+nav a::after {
+    border-color: var(--accent); /* Original border color */
+    transform-origin: bottom right;
+}
+
+nav a:hover::before {
+    transform: scale(1); /* Expand on hover */
+}
+
+nav a:hover::after {
+    transform: scale(1); /* Expand on hover */
+}
+
+nav a:hover {
+    background: radial-gradient(circle, var(--accent-focus) 0%, var(--accent) 100%);
+    animation: pulse 1s infinite; /* Pulsating background */
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Slight zoom effect */
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+button {
+    background-color: var(--accent);
+    color: var(--bg); /* Light text for buttons */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--accent-focus);
+}
+
+button.danger {
+    background-color: var(--danger);
+}
+
+button.danger:hover {
+    background-color: var(--danger-focus);
+}
+
+button.delete-note {
+    background-color: var(--danger);
+    margin-left: auto;
+}
+
+button.delete-note:hover {
+    background-color: var(--danger-focus);
+}
+
+main {
+    padding: 1rem;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+ul li {
+    background-color: var(--bg); /* Light background for notes */
+    color: var(--txt); /* Dark text for notes */
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px var(--shadow);
+    transition: transform 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--accent); /* Add a border for better separation */
+}
+
+ul li:hover {
+    transform: scale(1.02);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--accent);
+    color: var(--bg); /* Light text for footer */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.hidden-section {
+    display: none;
+}
+
+.active-section {
+    display: block;
+}
