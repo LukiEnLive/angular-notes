@@ -188,3 +188,111 @@ footer {
 .active-section {
     display: block;
 }
+
+#tags-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#tags-list span {
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.note-tag {
+    display: inline-block;
+    margin: 0 0.2rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+#notes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.note-card {
+    background-color: var(--bg);
+    color: var(--txt);
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.note-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px var(--shadow);
+}
+
+.note-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+.note-card p {
+    flex-grow: 1;
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+    color: var(--txt);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+}
+
+.note-tags {
+    margin: 0.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.note-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.note-actions button {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.note-actions .edit-note {
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+.note-actions .edit-note:hover {
+    background-color: var(--accent-focus);
+}
+
+.note-actions .delete-note {
+    background-color: var(--danger);
+    color: var(--bg);
+}
+
+.note-actions .delete-note:hover {
+    background-color: var(--danger-focus);
+}

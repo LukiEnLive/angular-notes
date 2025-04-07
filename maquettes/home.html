@@ -35,6 +35,10 @@
                 <input type="text" id="note-title" required>
                 <label for="note-content">Contenu:</label>
                 <textarea id="note-content" required></textarea>
+                <fieldset id="add-note-tags">
+                    <legend>Tags:</legend>
+                    <!-- Tags will be dynamically loaded here -->
+                </fieldset>
                 <button type="submit">Ajouter</button>
             </form>
         </section>
@@ -47,6 +51,10 @@
                 <input type="text" id="edit-note-title" required>
                 <label for="edit-note-content">Contenu:</label>
                 <textarea id="edit-note-content" required></textarea>
+                <fieldset id="edit-note-tags">
+                    <legend>Tags:</legend>
+                    <!-- Tags will be dynamically loaded here -->
+                </fieldset>
                 <button type="submit">Enregistrer</button>
             </form>
         </section>
@@ -55,6 +63,17 @@
         <section id="settings-section" class="hidden-section">
             <h2>Paramètres</h2>
             <button id="clear-notes" class="danger">Effacer toutes les notes</button>
+            <h3>Gérer les Tags</h3>
+            <form id="add-tag-form">
+                <label for="tag-name">Nom du tag:</label>
+                <input type="text" id="tag-name" required>
+                <label for="tag-color">Couleur:</label>
+                <input type="color" id="tag-color" value="#ffffff" required>
+                <button type="submit">Ajouter</button>
+            </form>
+            <ul id="tags-list">
+                <!-- Tags will be dynamically loaded here -->
+            </ul>
         </section>
     </main>
     <footer>
