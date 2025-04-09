@@ -1,0 +1,29 @@
+<p>tags works!</p>
+
+<a (click)="startEditingEmptyTag()">Créer une nouvelle étiquette</a>
+
+@if (editing) {
+<form (submit)="submitEditing($event)">
+  <label>
+    Nom de l'étiquette : <input type="text" [(ngModel)]="editing.name" name="name" required>
+  </label>
+  <label>
+    Couleur de l'étiquette : <input type="color" [(ngModel)]="editing.color" name="color">
+  </label>
+  <button type="submit">Valider</button>
+  <button type="button" (click)="cancelEditing()">Annuler</button>
+</form>
+}
+
+<ul>
+    @for(tag of tags; track $index) {
+      <li (dblclick)="startEditingTag(tag)" ><app-tag [id]="tag.id" [name]="tag.name" [color]="tag.color"></app-tag></li> 
+      <a (click)="dialogDeleteTag(tag)">Supprimer</a>
+    } @empty {
+      <li>Aucun tag !</li>
+    }
+  </ul>
+
+<a (click)="dialogAddTag()">Ajouter un tag</a>
+
+<a (click)="startEditingEmptyTag()">Créer une nouvelle étiquette</a>
