@@ -1,6 +1,6 @@
-<p>tags works!</p>
+<h2> Gérer les Tags </h2>
 
-<a (click)="startEditingEmptyTag()">Créer une nouvelle étiquette</a>
+<a class="create-link" (click)="startEditingEmptyTag()">Créer une nouvelle étiquette</a>
 
 @if (editing) {
 <form (submit)="submitEditing($event)">
@@ -17,13 +17,12 @@
 
 <ul>
     @for(tag of tags; track $index) {
-      <li (dblclick)="startEditingTag(tag)" ><app-tag [id]="tag.id" [name]="tag.name" [color]="tag.color"></app-tag></li> 
-      <a (click)="dialogDeleteTag(tag)">Supprimer</a>
+      <li (dblclick)="startEditingTag(tag)" >
+        <app-tag [id]="tag.id" [name]="tag.name" [color]="tag.color"></app-tag>
+        <span class="edit-hint">Double clique pour modifier</span>
+        <a class="delete-link" (click)="dialogDeleteTag(tag)">Supprimer</a>
+      </li> 
     } @empty {
       <li>Aucun tag !</li>
     }
   </ul>
-
-<a (click)="dialogAddTag()">Ajouter un tag</a>
-
-<a (click)="startEditingEmptyTag()">Créer une nouvelle étiquette</a>
