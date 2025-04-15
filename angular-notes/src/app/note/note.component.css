@@ -1,0 +1,17 @@
+p {
+    font-family: Arial, sans-serif;
+    margin: 8px 0;
+}
+
+app-tag {
+    display: inline-block;
+    margin: 4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+p:last-child {
+    color: gray;
+    font-style: italic;
+}

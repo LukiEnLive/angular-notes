@@ -2,8 +2,10 @@
 
 <ul>
     @for(note of notes; track $index) {
-        <app-note [note]="note"></app-note>
-        <a class="delete-link" (click)="dialogDeleteNote(note)">Supprimer</a>
+        <div class="note">
+            <app-note [note]="note"></app-note>
+            <a class="delete-link" (click)="dialogDeleteNote(note)">Supprimer</a>
+        </div>
     } @empty {
         <li>Aucune note !</li>
     }

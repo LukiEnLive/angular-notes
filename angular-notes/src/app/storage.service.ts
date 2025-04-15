@@ -33,6 +33,12 @@ export class StorageService {
     if (index !== -1) {
       tags[index] = tag;
       this.saveTags(tags);
+
+      const notes = this.getNotes();
+      notes.forEach(note => {
+        note.tags = note.tags.map(t => t.id === tag.id ? tag : t);
+      });
+      this.saveNotes(notes);
     }
   }
 
@@ -42,6 +48,12 @@ export class StorageService {
     if (index !== -1) {
       tags.splice(index, 1);
       this.saveTags(tags);
+
+      const notes = this.getNotes();
+      notes.forEach(note => {
+        note.tags = note.tags.filter(tag => tag.id !== tagId);
+      });
+      this.saveNotes(notes);
     }
   }
 
@@ -54,7 +66,14 @@ export class StorageService {
   getNotes(): Note[] {
     const notes = localStorage.getItem('notes');
     if (notes) {
-      return JSON.parse(notes);
+      const parsedNotes : Note[] = JSON.parse(notes);
+      const existingTags = this.getTags();
+
+      parsedNotes.forEach(note => {
+        note.tags = note.tags.filter(tag => existingTags.some(t => t.id === tag.id));
+      });
+
+      return parsedNotes;
     }
     return [];
   }

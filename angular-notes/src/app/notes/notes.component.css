@@ -32,3 +32,12 @@ h2 {
     color: #333;
     margin-bottom: 1.5rem;
 }
+
+.note {
+    border: #333 1px;
+    box-shadow: 0 2px 5px var(--shadow);
+    margin: 1em;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: bisque;
+}
