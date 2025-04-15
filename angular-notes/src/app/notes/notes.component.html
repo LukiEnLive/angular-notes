@@ -1,1 +1,10 @@
-<p>tes works!</p>
+<h2>Vos Notes</h2>
+
+<ul>
+    @for(note of notes; track $index) {
+        <app-note [note]="note"></app-note>
+        <a class="delete-link" (click)="dialogDeleteNote(note)">Supprimer</a>
+    } @empty {
+        <li>Aucune note !</li>
+    }
+</ul>

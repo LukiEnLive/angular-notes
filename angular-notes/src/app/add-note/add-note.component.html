@@ -1,0 +1,21 @@
+<h2> Créer une nouvelle note </h2>
+
+<form (submit)="submitNewNote($event)">
+  <label>
+    Titre : <input type="text" [(ngModel)]="newNote.title" name="title">
+  </label>
+  <label>
+    Contenu : <input type="text" [(ngModel)]="newNote.content" name="content">
+  </label>
+  <label>
+    Tags : 
+    <select [(ngModel)]="newNote.tags" name="tags" multiple>
+      @for(tag of tags; track $index) {
+        <option [value]="tag" [style.background-color]="tag.color">{{ tag.name }}</option>
+      } @empty {
+        <option disabled>Aucun tag !</option>
+      }
+    </select>
+    </label>
+    <button type="submit" class="create-link">Créer</button>
+</form>

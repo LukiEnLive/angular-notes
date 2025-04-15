@@ -5,7 +5,7 @@
 @if (editing) {
 <form (submit)="submitEditing($event)">
   <label>
-    Nom de l'étiquette : <input type="text" [(ngModel)]="editing.name" name="name" required>
+    Nom de l'étiquette : <input type="text" [(ngModel)]="editing.name" name="name">
   </label>
   <label>
     Couleur de l'étiquette : <input type="color" [(ngModel)]="editing.color" name="color">

@@ -1,0 +1,34 @@
+.delete-link {
+    text-decoration: none;
+    background-color: #f44336;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-link:hover {
+    background-color: #d32f2f;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+}

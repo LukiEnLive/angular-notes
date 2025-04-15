@@ -52,7 +52,7 @@ export class TagsComponent {
   submitEditing(event: Event) {
     event.preventDefault();
     if (this.editing) {
-      if (this.editing.id === 0) {
+      if (this.editing.id === 0 && this.editing.name !== '') {
         const newTag: Tag = { id: Date.now(), name: this.editing.name, color: this.editing.color };
         this.storage.createTag(newTag);
         this.tags.push(newTag);

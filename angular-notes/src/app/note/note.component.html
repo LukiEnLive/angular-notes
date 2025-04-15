@@ -1,0 +1,7 @@
+<p> {{note()?.title}}</p>
+<p> {{note()?.content}}</p>
+@for(tag of note()?.tags; track $index) {
+    <app-tag [id]="tag.id" [name]="tag.name" [color]="tag.color"></app-tag>
+} @empty {
+    <p>Aucun tag !</p>
+}

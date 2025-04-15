@@ -41,8 +41,13 @@ ul li:hover {
     border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
-    display: inline-block;
+    display: flex;
     transition: background-color 0.3s ease;
+    justify-content: center;
+    width: 15em;
+    margin-right: 50%;
+    margin-left: 50%;
+    translate: -50%;
 }
 
 .create-link:hover {
@@ -55,4 +60,10 @@ ul li:hover {
     margin: 0 1rem;
     flex-grow: 1;
     text-align: center;
-  }
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
